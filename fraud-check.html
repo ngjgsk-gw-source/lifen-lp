@@ -33,8 +33,6 @@ body {
   -webkit-font-smoothing: antialiased;
   line-height: 1;
 }
-
-/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 16px 32px;
@@ -60,8 +58,6 @@ nav {
   text-decoration: none; display: inline-block;
 }
 .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-
-/* HERO */
 .hero {
   min-height: 100vh; display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 120px 24px 80px;
@@ -80,8 +76,6 @@ nav {
   animation: blink 1.5s infinite;
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-
-/* Camera scan mockup */
 .camera-demo {
   width: 260px; height: 190px;
   border: 1.5px solid rgba(96,165,250,0.35); border-radius: 18px;
@@ -109,7 +103,6 @@ nav {
   color: #FCA5A5; padding: 4px 14px; border-radius: 99px;
   font-size: 11px; font-weight: 500; white-space: nowrap; letter-spacing: 0.5px;
 }
-
 .hero-title {
   font-size: clamp(32px, 6.5vw, 64px); font-weight: 700;
   line-height: 1.45; color: white; margin-bottom: 24px; letter-spacing: -0.5px;
@@ -124,8 +117,6 @@ nav {
   line-height: 2.3; margin-bottom: 44px;
   max-width: 500px; margin-left: auto; margin-right: auto; font-weight: 300;
 }
-
-/* App Store Button */
 .appstore-btn {
   display: inline-flex; align-items: center; gap: 12px;
   background: white; color: #0A0A14;
@@ -137,19 +128,14 @@ nav {
 .appstore-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.45); }
 .appstore-btn-sub { font-size: 10px; font-weight: 400; opacity: 0.55; display: block; }
 .appstore-btn-main { font-size: 16px; font-weight: 700; display: block; }
-
 .hero-kpi { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
 .kpi-item { text-align: center; }
 .kpi-num { font-size: 30px; font-weight: 700; color: #60A5FA; display: block; letter-spacing: -1px; }
 .kpi-label { font-size: 11px; color: var(--text-sub); letter-spacing: 1px; margin-top: 4px; display: block; }
-
-/* SECTIONS */
 .sec-label { text-align:center; font-size:10px; letter-spacing:5px; color:#60A5FA; margin-bottom:14px; font-weight:500; opacity:0.85; }
 .sec-title { text-align:center; font-size:clamp(22px,4vw,36px); font-weight:700; color:white; line-height:1.6; margin-bottom:12px; }
 .sec-sub { text-align:center; font-size:14px; color:var(--text-sub); line-height:2.2; font-weight:300; margin-bottom:0; }
 .blue-rule { width:40px; height:2px; background:linear-gradient(to right,var(--blue2),var(--cyan)); border-radius:99px; margin:22px auto 48px; }
-
-/* ALERT (stats) */
 .alert-sec {
   padding: 80px 24px;
   background: rgba(239,68,68,0.04);
@@ -165,8 +151,6 @@ nav {
 .stat-unit { font-size: 18px; }
 .stat-desc { font-size: 13px; color: var(--text-sub); margin-top: 8px; line-height: 1.9; }
 .stat-src { font-size: 10px; color: var(--text-muted); margin-top: 6px; }
-
-/* HOW IT WORKS */
 .how-sec { padding: 100px 24px; background: var(--navy); }
 .how-steps { max-width: 640px; margin: 0 auto; }
 .how-step {
@@ -188,8 +172,6 @@ nav {
 }
 .how-content h3 { font-size: 18px; color: white; font-weight: 600; margin-bottom: 10px; }
 .how-content p { font-size: 14px; color: var(--text-sub); line-height: 2.3; font-weight: 300; }
-
-/* DETECT TYPES */
 .detect-sec { padding: 100px 24px; background: var(--navy2); }
 .detect-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; max-width:860px; margin:0 auto; }
 .detect-card {
@@ -206,8 +188,6 @@ nav {
 .detect-title { font-size:15px; color:white; font-weight:600; margin-bottom:8px; }
 .detect-desc { font-size:13px; color:var(--text-sub); line-height:2; font-weight:300; }
 .detect-badge { display:inline-block; margin-top:12px; font-size:10px; color:var(--text-muted); border:1px solid rgba(255,255,255,0.08); padding:3px 10px; border-radius:99px; }
-
-/* FAMILY */
 .family-sec { padding: 100px 24px; background: var(--navy); }
 .family-flow {
   display: flex; align-items: flex-start; justify-content: center;
@@ -232,8 +212,6 @@ nav {
 .fam-feat-icon { font-size:22px; flex-shrink:0; margin-top:2px; }
 .fam-feat-title { font-size:14px; color:white; font-weight:600; margin-bottom:5px; }
 .fam-feat-desc { font-size:12px; color:var(--text-sub); line-height:2; font-weight:300; }
-
-/* DESIGN FOR ELDERLY */
 .elderly-sec { padding: 100px 24px; background: var(--navy2); }
 .design-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; max-width:860px; margin:0 auto; }
 .design-card {
@@ -244,10 +222,8 @@ nav {
 .design-num { font-size:42px; font-weight:700; color:#60A5FA; opacity:0.4; margin-bottom:12px; }
 .design-title { font-size:15px; color:white; font-weight:600; margin-bottom:8px; }
 .design-desc { font-size:12px; color:var(--text-sub); line-height:2.1; font-weight:300; }
-
-/* PRICING */
 .price-sec { padding: 100px 24px; background: var(--navy); }
-.price-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:820px; margin:0 auto; }
+.price-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:560px; margin:0 auto; }
 .price-card {
   background:var(--navy2); border:1px solid rgba(96,165,250,0.1);
   border-radius:20px; padding:36px 28px; position:relative;
@@ -265,8 +241,6 @@ nav {
 .price-pitch { font-size:12px; color:var(--text-sub); margin:12px 0 20px; line-height:1.9; }
 .price-list { font-size:13px; color:var(--text-main); line-height:2.6; }
 .price-annual { font-size:11px; color:var(--text-muted); margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.05); }
-
-/* GIFT */
 .gift-sec {
   padding: 100px 24px; text-align: center;
   background: linear-gradient(160deg, var(--navy3), var(--navy2));
@@ -284,8 +258,6 @@ nav {
 .g-step:last-child { border-bottom: none; }
 .g-num { width:28px; height:28px; background:rgba(37,99,235,0.2); border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; color:#60A5FA; font-weight:600; }
 .g-text { font-size:13px; color:var(--text-sub); line-height:1.9; padding-top:4px; font-weight:300; }
-
-/* CTA */
 .cta-sec { padding:100px 24px; background:var(--navy); text-align:center; }
 .cta-title { font-size:clamp(26px,5vw,46px); font-weight:700; color:white; line-height:1.6; margin-bottom:14px; }
 .cta-sub { font-size:15px; color:var(--text-sub); line-height:2.2; margin-bottom:48px; font-weight:300; }
@@ -310,8 +282,6 @@ nav {
   padding:24px 28px; border:1px solid rgba(96,165,250,0.1);
   border-radius:16px; background:var(--navy2); text-align:left;
 }
-
-/* FOOTER */
 footer {
   padding:48px 24px; border-top:1px solid rgba(96,165,250,0.07); text-align:center;
 }
@@ -320,11 +290,8 @@ footer {
 .footer-link { font-size:12px; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
 .footer-link:hover { color:var(--text-sub); }
 .footer-copy { font-size:11px; color:var(--text-muted); }
-
-/* ANIMATE */
 .fade { opacity:0; transform:translateY(24px); transition:opacity 0.8s ease, transform 0.8s ease; }
 .fade.visible { opacity:1; transform:translateY(0); }
-
 @media (max-width:600px) {
   nav { padding:14px 16px; }
   .hero { padding:100px 16px 56px; }
@@ -336,7 +303,6 @@ footer {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-brand">
     <div class="nav-shield">
@@ -347,13 +313,11 @@ footer {
   <a href="#download" class="nav-cta">App Storeで見る</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div>
     <div class="hero-badge">
       <span class="badge-dot"></span>高齢者詐欺被害、年間600億円以上
     </div>
-
     <div class="camera-demo">
       <div class="doc-lines">
         <div class="doc-line" style="width:80%"></div>
@@ -370,7 +334,6 @@ footer {
       <div class="corner br"></div>
       <div class="scan-result">&#9888; 詐欺の疑い — 家族に通知中</div>
     </div>
-
     <h1 class="hero-title">
       撮るだけで、<br>
       <span class="accent">詐欺かどうか</span><br>
@@ -381,7 +344,6 @@ footer {
       カメラを向けるだけで、AIが即座に判定。<br>
       危険なら、離れた家族にも自動でお知らせ。
     </p>
-
     <div>
       <a href="#download" class="appstore-btn">
         <svg width="28" height="28" viewBox="0 0 814 1000" fill="#0A0A14"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 389.4 45 299.6 45 264.5c0-162.7 107.5-248.1 213.3-248.1 51.3 0 94.6 33.9 126.7 33.9 30.8 0 79.8-35.9 140.1-35.9 25.4 0 117.1 2.6 177.5 101.7zm-255.8-81.8c29.2-34.5 49.8-82.4 49.8-130.3 0-6.5-.6-13-1.3-19.5-47.2 1.9-103.1 32.1-136.9 72.3-26.7 30.8-51.3 78.7-51.3 127.3 0 7.1 1.3 14.3 1.9 16.5 3.2.6 8.4 1.3 13.6 1.3 42.2 0 94.1-28.5 124.2-67.6z"/></svg>
@@ -391,54 +353,27 @@ footer {
         </div>
       </a>
     </div>
-
     <div class="hero-kpi">
-      <div class="kpi-item">
-        <span class="kpi-num">0.3秒</span>
-        <span class="kpi-label">AI判定スピード</span>
-      </div>
-      <div class="kpi-item">
-        <span class="kpi-num">98%</span>
-        <span class="kpi-label">検知精度</span>
-      </div>
-      <div class="kpi-item">
-        <span class="kpi-num">24種</span>
-        <span class="kpi-label">詐欺パターン対応</span>
-      </div>
+      <div class="kpi-item"><span class="kpi-num">0.3秒</span><span class="kpi-label">AI判定スピード</span></div>
+      <div class="kpi-item"><span class="kpi-num">98%</span><span class="kpi-label">検知精度</span></div>
+      <div class="kpi-item"><span class="kpi-num">24種</span><span class="kpi-label">詐欺パターン対応</span></div>
     </div>
   </div>
 </section>
 
-<!-- ALERT / STATS -->
 <section class="alert-sec">
   <div class="alert-inner fade">
     <p class="sec-label" style="text-align:left;">THE PROBLEM</p>
     <h2 class="sec-title" style="text-align:left; font-size:clamp(22px,4vw,34px);">今この瞬間も、<br>あなたの親が狙われているかもしれない。</h2>
-    <p class="sec-sub" style="text-align:left; margin-top:12px;">
-      高齢者を狙った詐欺は年々巧妙になっています。<br>
-      「自分の親は大丈夫」——その油断が、一番危険です。
-    </p>
+    <p class="sec-sub" style="text-align:left; margin-top:12px;">高齢者を狙った詐欺は年々巧妙になっています。<br>「自分の親は大丈夫」——その油断が、一番危険です。</p>
     <div class="stats-row">
-      <div class="stat-card">
-        <p class="stat-big">600<span class="stat-unit">億</span></p>
-        <p class="stat-desc">高齢者詐欺被害の年間総額（推定）</p>
-        <p class="stat-src">※ 警察庁データより</p>
-      </div>
-      <div class="stat-card">
-        <p class="stat-big">70<span class="stat-unit">%</span></p>
-        <p class="stat-desc">被害者のうち65歳以上の割合</p>
-        <p class="stat-src">※ 消費者庁データより</p>
-      </div>
-      <div class="stat-card">
-        <p class="stat-big">1/3</p>
-        <p class="stat-desc">被害を受けても相談しない割合</p>
-        <p class="stat-src">※ 国民生活センターより</p>
-      </div>
+      <div class="stat-card"><p class="stat-big">600<span class="stat-unit">億</span></p><p class="stat-desc">高齢者詐欺被害の年間総額（推定）</p><p class="stat-src">※ 警察庁データより</p></div>
+      <div class="stat-card"><p class="stat-big">70<span class="stat-unit">%</span></p><p class="stat-desc">被害者のうち65歳以上の割合</p><p class="stat-src">※ 消費者庁データより</p></div>
+      <div class="stat-card"><p class="stat-big">1/3</p><p class="stat-desc">被害を受けても相談しない割合</p><p class="stat-src">※ 国民生活センターより</p></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
 <section class="how-sec" id="how">
   <p class="sec-label">HOW IT WORKS</p>
   <h2 class="sec-title">使い方はたった3ステップ</h2>
@@ -472,141 +407,53 @@ footer {
   </div>
 </section>
 
-<!-- DETECT TYPES -->
 <section class="detect-sec">
   <p class="sec-label">WHAT WE DETECT</p>
   <h2 class="sec-title">24種類の詐欺パターンに対応</h2>
   <div class="blue-rule"></div>
   <div class="detect-grid">
-    <div class="detect-card fade">
-      <div class="di red">&#128203;</div>
-      <h3 class="detect-title">架空請求書</h3>
-      <p class="detect-desc">「未払い料金があります」「裁判所から通知」などの偽請求書を即座に検出。</p>
-      <span class="detect-badge">書類スキャン</span>
-    </div>
-    <div class="detect-card fade">
-      <div class="di orange">&#128172;</div>
-      <h3 class="detect-title">フィッシングSMS</h3>
-      <p class="detect-desc">宅配業者・銀行・公的機関を装った偽SMSのスクリーンショットを判定。</p>
-      <span class="detect-badge">画面スキャン</span>
-    </div>
-    <div class="detect-card fade">
-      <div class="di blue">&#10067;</div>
-      <h3 class="detect-title">不審なQRコード</h3>
-      <p class="detect-desc">チラシや封筒に貼られた危険なQRコードを、開く前に安全確認。</p>
-      <span class="detect-badge">QRスキャン</span>
-    </div>
-    <div class="detect-card fade">
-      <div class="di purple">&#127968;</div>
-      <h3 class="detect-title">悪質な訪問販売</h3>
-      <p class="detect-desc">「点検」「工事」を装った悪質業者のチラシ・名刺を判定。</p>
-      <span class="detect-badge">書類スキャン</span>
-    </div>
-    <div class="detect-card fade">
-      <div class="di red">&#127981;</div>
-      <h3 class="detect-title">振り込め詐欺</h3>
-      <p class="detect-desc">「息子が事故を起こした」などのオレオレ詐欺の手紙・メモを検出。</p>
-      <span class="detect-badge">書類スキャン</span>
-    </div>
-    <div class="detect-card fade">
-      <div class="di orange">&#128176;</div>
-      <h3 class="detect-title">還付金詐欺</h3>
-      <p class="detect-desc">医療費・保険料の還付を装った偽の通知書を自動判定。</p>
-      <span class="detect-badge">書類スキャン</span>
-    </div>
+    <div class="detect-card fade"><div class="di red">&#128203;</div><h3 class="detect-title">架空請求書</h3><p class="detect-desc">「未払い料金があります」「裁判所から通知」などの偽請求書を即座に検出。</p><span class="detect-badge">書類スキャン</span></div>
+    <div class="detect-card fade"><div class="di orange">&#128172;</div><h3 class="detect-title">フィッシングSMS</h3><p class="detect-desc">宅配業者・銀行・公的機関を装った偽SMSのスクリーンショットを判定。</p><span class="detect-badge">画面スキャン</span></div>
+    <div class="detect-card fade"><div class="di blue">&#10067;</div><h3 class="detect-title">不審なQRコード</h3><p class="detect-desc">チラシや封筒に貼られた危険なQRコードを、開く前に安全確認。</p><span class="detect-badge">QRスキャン</span></div>
+    <div class="detect-card fade"><div class="di purple">&#127968;</div><h3 class="detect-title">悪質な訪問販売</h3><p class="detect-desc">「点検」「工事」を装った悪質業者のチラシ・名刺を判定。</p><span class="detect-badge">書類スキャン</span></div>
+    <div class="detect-card fade"><div class="di red">&#127981;</div><h3 class="detect-title">振り込め詐欺</h3><p class="detect-desc">「息子が事故を起こした」などのオレオレ詐欺の手紙・メモを検出。</p><span class="detect-badge">書類スキャン</span></div>
+    <div class="detect-card fade"><div class="di orange">&#128176;</div><h3 class="detect-title">還付金詐欺</h3><p class="detect-desc">医療費・保険料の還付を装った偽の通知書を自動判定。</p><span class="detect-badge">書類スキャン</span></div>
   </div>
 </section>
 
-<!-- FAMILY -->
 <section class="family-sec">
   <p class="sec-label">FAMILY PROTECTION</p>
   <h2 class="sec-title">離れていても、<br>一緒に守れる。</h2>
   <p class="sec-sub">子供がアプリを設定して親に贈る。<br>親が使うたびに、子供にも安心が届く。</p>
   <div class="blue-rule"></div>
-
   <div class="family-flow">
-    <div class="fam-step fade">
-      <div class="fam-icon">&#128241;</div>
-      <p class="fam-label-title">子供がセットアップ</p>
-      <p class="fam-label-desc">アプリをダウンロードして<br>親のスマホに設定。<br>10分で完了。</p>
-    </div>
+    <div class="fam-step fade"><div class="fam-icon">&#128241;</div><p class="fam-label-title">子供がセットアップ</p><p class="fam-label-desc">アプリをダウンロードして<br>親のスマホに設定。<br>10分で完了。</p></div>
     <div class="fam-arrow">&rsaquo;</div>
-    <div class="fam-step fade">
-      <div class="fam-icon">&#128116;</div>
-      <p class="fam-label-title">親が使う</p>
-      <p class="fam-label-desc">怪しいものを<br>撮るだけ。<br>難しい操作は一切なし。</p>
-    </div>
+    <div class="fam-step fade"><div class="fam-icon">&#128116;</div><p class="fam-label-title">親が使う</p><p class="fam-label-desc">怪しいものを<br>撮るだけ。<br>難しい操作は一切なし。</p></div>
     <div class="fam-arrow">&rsaquo;</div>
-    <div class="fam-step fade">
-      <div class="fam-icon">&#128276;</div>
-      <p class="fam-label-title">子供に通知</p>
-      <p class="fam-label-desc">危険な場合、<br>子供のスマホにも<br>即座にアラート。</p>
-    </div>
+    <div class="fam-step fade"><div class="fam-icon">&#128276;</div><p class="fam-label-title">子供に通知</p><p class="fam-label-desc">危険な場合、<br>子供のスマホにも<br>即座にアラート。</p></div>
   </div>
-
   <div class="family-features">
-    <div class="fam-feat fade">
-      <div class="fam-feat-icon">&#128337;</div>
-      <div>
-        <h3 class="fam-feat-title">スキャン履歴を家族で共有</h3>
-        <p class="fam-feat-desc">親がスキャンした履歴を子供のアプリでも確認。「最近こんなの届いた？」と家族の話題に。</p>
-      </div>
-    </div>
-    <div class="fam-feat fade">
-      <div class="fam-feat-icon">&#128680;</div>
-      <div>
-        <h3 class="fam-feat-title">危険検知を即座にアラート</h3>
-        <p class="fam-feat-desc">詐欺の可能性が高い場合、登録した家族全員に即時通知。「お母さん、それ詐欺だよ！」と電話できます。</p>
-      </div>
-    </div>
-    <div class="fam-feat fade">
-      <div class="fam-feat-icon">&#128172;</div>
-      <div>
-        <h3 class="fam-feat-title">アプリ内メッセージ</h3>
-        <p class="fam-feat-desc">スキャン結果にコメントを残せます。「これは大丈夫」「こういうのは全部詐欺だから気をつけて」など。</p>
-      </div>
-    </div>
-    <div class="fam-feat fade">
-      <div class="fam-feat-icon">&#128295;</div>
-      <div>
-        <h3 class="fam-feat-title">遠隔でセットアップ</h3>
-        <p class="fam-feat-desc">帰省しなくても、ビデオ通話で一緒に設定できます。親のスマホ画面を見ながら10分で完了。</p>
-      </div>
-    </div>
+    <div class="fam-feat fade"><div class="fam-feat-icon">&#128337;</div><div><h3 class="fam-feat-title">スキャン履歴を家族で共有</h3><p class="fam-feat-desc">親がスキャンした履歴を子供のアプリでも確認。「最近こんなの届いた？」と家族の話題に。</p></div></div>
+    <div class="fam-feat fade"><div class="fam-feat-icon">&#128680;</div><div><h3 class="fam-feat-title">危険検知を即座にアラート</h3><p class="fam-feat-desc">詐欺の可能性が高い場合、登録した家族全員に即時通知。「お母さん、それ詐欺だよ！」と電話できます。</p></div></div>
+    <div class="fam-feat fade"><div class="fam-feat-icon">&#128172;</div><div><h3 class="fam-feat-title">アプリ内メッセージ</h3><p class="fam-feat-desc">スキャン結果にコメントを残せます。「これは大丈夫」「こういうのは全部詐欺だから気をつけて」など。</p></div></div>
+    <div class="fam-feat fade"><div class="fam-feat-icon">&#128295;</div><div><h3 class="fam-feat-title">遠隔でセットアップ</h3><p class="fam-feat-desc">帰省しなくても、ビデオ通話で一緒に設定できます。親のスマホ画面を見ながら10分で完了。</p></div></div>
   </div>
 </section>
 
-<!-- DESIGNED FOR ELDERLY -->
 <section class="elderly-sec">
   <p class="sec-label">DESIGNED FOR ELDERLY</p>
   <h2 class="sec-title">お年寄りが迷わず使えるデザイン</h2>
   <p class="sec-sub">複雑な操作は一切ありません。<br>「スマホが苦手」なお父さん・お母さんでも大丈夫。</p>
   <div class="blue-rule"></div>
   <div class="design-grid">
-    <div class="design-card fade">
-      <p class="design-num">01</p>
-      <h3 class="design-title">ボタンは大きく、文字も大きく</h3>
-      <p class="design-desc">ホーム画面には大きなボタン1つだけ。迷わず使えます。</p>
-    </div>
-    <div class="design-card fade">
-      <p class="design-num">02</p>
-      <h3 class="design-title">「安全」「注意」「危険」の3段階</h3>
-      <p class="design-desc">結果は色と文字でシンプルに。難しい説明は不要です。</p>
-    </div>
-    <div class="design-card fade">
-      <p class="design-num">03</p>
-      <h3 class="design-title">音声でも教えてくれる</h3>
-      <p class="design-desc">画面が見えにくくても、音声で判定結果をお知らせします。</p>
-    </div>
-    <div class="design-card fade">
-      <p class="design-num">04</p>
-      <h3 class="design-title">通信量・バッテリーに配慮</h3>
-      <p class="design-desc">AI判定はサーバーで処理。スマホへの負担を最小限に。</p>
-    </div>
+    <div class="design-card fade"><p class="design-num">01</p><h3 class="design-title">ボタンは大きく、文字も大きく</h3><p class="design-desc">ホーム画面には大きなボタン1つだけ。迷わず使えます。</p></div>
+    <div class="design-card fade"><p class="design-num">02</p><h3 class="design-title">「安全」「注意」「危険」の3段階</h3><p class="design-desc">結果は色と文字でシンプルに。難しい説明は不要です。</p></div>
+    <div class="design-card fade"><p class="design-num">03</p><h3 class="design-title">音声でも教えてくれる</h3><p class="design-desc">画面が見えにくくても、音声で判定結果をお知らせします。</p></div>
+    <div class="design-card fade"><p class="design-num">04</p><h3 class="design-title">通信量・バッテリーに配慮</h3><p class="design-desc">AI判定はサーバーで処理。スマホへの負担を最小限に。</p></div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="price-sec" id="pricing">
   <p class="sec-label">PRICING</p>
   <h2 class="sec-title">親への、一番大切なプレゼント</h2>
@@ -628,7 +475,7 @@ footer {
     <div class="price-card hot">
       <div class="price-badge">ギフト向き・一番人気</div>
       <p class="price-plan">STANDARD</p>
-      <p class="price-amount">&#165;480<span class="price-per">/月</span></p>
+      <p class="price-amount">&#165;380<span class="price-per">/月</span></p>
       <p class="price-pitch">毎日安心して使える、定番プラン</p>
       <p class="price-list">
         &#10003; スキャン無制限<br>
@@ -638,53 +485,23 @@ footer {
         &#10003; 音声読み上げ機能<br>
         &#10003; 月次レポートを家族に送付
       </p>
-      <p class="price-annual">年払い：&#165;4,800（2ヶ月分お得）</p>
-    </div>
-    <div class="price-card">
-      <p class="price-plan">FAMILY</p>
-      <p class="price-amount">&#165;800<span class="price-per">/月</span></p>
-      <p class="price-pitch">離れた家族全員を守りたい方へ</p>
-      <p class="price-list">
-        &#10003; 親のアカウント2つまで<br>
-        &#10003; スキャン無制限<br>
-        &#10003; 家族10人まで通知<br>
-        &#10003; スキャン履歴の共有（1年）<br>
-        &#10003; 優先カスタマーサポート
-      </p>
-      <p class="price-annual">年払い：&#165;8,000（2ヶ月分お得）</p>
+      <p class="price-annual">年払い：&#165;3,800（2ヶ月分お得）</p>
     </div>
   </div>
 </section>
 
-<!-- GIFT -->
 <section class="gift-sec">
   <p class="sec-label">GIFT FOR PARENTS</p>
   <h2 class="sec-title">「お父さん・お母さんへ。<br>一番大切なプレゼントです。」</h2>
   <div class="gift-box fade">
     <span class="gift-emoji">&#127873;</span>
     <h3 class="gift-title">10分で、親の安全を守れる</h3>
-    <p class="gift-sub">
-      帰省のたびに「詐欺に気をつけてね」と伝えるだけでは、<br>
-      もう不十分な時代です。<br>
-      このアプリを贈るだけで、毎日の生活の中で自動的に守れます。
-    </p>
+    <p class="gift-sub">帰省のたびに「詐欺に気をつけてね」と伝えるだけでは、もう不十分な時代です。このアプリを贈るだけで、毎日の生活の中で自動的に守れます。</p>
     <div class="gift-steps">
-      <div class="g-step">
-        <div class="g-num">1</div>
-        <p class="g-text">App Storeで「詐欺チェック」をダウンロード（無料）</p>
-      </div>
-      <div class="g-step">
-        <div class="g-num">2</div>
-        <p class="g-text">サブスクリプションを購入（月480円〜）</p>
-      </div>
-      <div class="g-step">
-        <div class="g-num">3</div>
-        <p class="g-text">親のスマホにもアプリを入れて、招待コードを送る（ビデオ通話でもOK）</p>
-      </div>
-      <div class="g-step">
-        <div class="g-num">4</div>
-        <p class="g-text">設定完了。あとは親が使うだけ。危険なときは自動で通知が届きます。</p>
-      </div>
+      <div class="g-step"><div class="g-num">1</div><p class="g-text">App Storeで「詐欺チェック」をダウンロード（無料）</p></div>
+      <div class="g-step"><div class="g-num">2</div><p class="g-text">サブスクリプションを購入（月380円〜）</p></div>
+      <div class="g-step"><div class="g-num">3</div><p class="g-text">親のスマホにもアプリを入れて、招待コードを送る（ビデオ通話でもOK）</p></div>
+      <div class="g-step"><div class="g-num">4</div><p class="g-text">設定完了。あとは親が使うだけ。危険なときは自動で通知が届きます。</p></div>
     </div>
     <a href="#download" class="appstore-btn" style="justify-content:center;">
       <svg width="26" height="26" viewBox="0 0 814 1000" fill="#0A0A14"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 389.4 45 299.6 45 264.5c0-162.7 107.5-248.1 213.3-248.1 51.3 0 94.6 33.9 126.7 33.9 30.8 0 79.8-35.9 140.1-35.9 25.4 0 117.1 2.6 177.5 101.7zm-255.8-81.8c29.2-34.5 49.8-82.4 49.8-130.3 0-6.5-.6-13-1.3-19.5-47.2 1.9-103.1 32.1-136.9 72.3-26.7 30.8-51.3 78.7-51.3 127.3 0 7.1 1.3 14.3 1.9 16.5 3.2.6 8.4 1.3 13.6 1.3 42.2 0 94.1-28.5 124.2-67.6z"/></svg>
@@ -696,14 +513,10 @@ footer {
   </div>
 </section>
 
-<!-- CTA / DOWNLOAD -->
 <section class="cta-sec" id="download">
   <p class="sec-label">DOWNLOAD</p>
   <h2 class="cta-title">今日から、<br>守り始めよう。</h2>
-  <p class="cta-sub">
-    無料ですぐ始められます。<br>
-    「後で入れよう」と思ったとき、詐欺は起きています。
-  </p>
+  <p class="cta-sub">無料ですぐ始められます。<br>「後で入れよう」と思ったとき、詐欺は起きています。</p>
   <div class="cta-btns">
     <a href="#" class="cta-primary">
       <svg width="22" height="22" viewBox="0 0 814 1000" fill="currentColor"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 389.4 45 299.6 45 264.5c0-162.7 107.5-248.1 213.3-248.1 51.3 0 94.6 33.9 126.7 33.9 30.8 0 79.8-35.9 140.1-35.9 25.4 0 117.1 2.6 177.5 101.7zm-255.8-81.8c29.2-34.5 49.8-82.4 49.8-130.3 0-6.5-.6-13-1.3-19.5-47.2 1.9-103.1 32.1-136.9 72.3-26.7 30.8-51.3 78.7-51.3 127.3 0 7.1 1.3 14.3 1.9 16.5 3.2.6 8.4 1.3 13.6 1.3 42.2 0 94.1-28.5 124.2-67.6z"/></svg>
@@ -722,7 +535,6 @@ footer {
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p class="footer-logo">詐欺チェック</p>
   <div class="footer-links">
