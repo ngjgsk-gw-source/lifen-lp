@@ -1,1 +1,6 @@
-{ "cleanUrls": true }
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/family/(.*)", "destination": "/share.html" }
+  ]
+}

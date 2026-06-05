@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Lifen — 家族の記録</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --dark: #0E0A04; --surface: #1A1209; --divider: #2D1F0F;
+    --gold: #C8965F; --gold-bright: #F0B87A;
+    --cream: #F5EDD8; --textHi: #fff; --body: #C8B89A;
+    --muted: #7A6A55; --faint: #4A3A2A;
+    --danger: #c0392b; --border: rgba(240,184,122,0.15);
+  }
+  body {
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    font-family: 'Noto Serif JP', serif; background: var(--dark); color: var(--cream);
+    min-height: 100vh; line-height: 1.6;
+  }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+  .brand .logo { font-size: 18px; letter-spacing: 8px; color: var(--gold-bright); font-weight: 400; }
+  .brand .tag { font-size: 11px; letter-spacing: 2px; color: var(--muted); }
+
+  .center { text-align: center; padding: 80px 16px; }
+  .spinner {
+    width: 34px; height: 34px; border: 2px solid var(--divider);
+    border-top-color: var(--gold-bright); border-radius: 50%;
+    margin: 0 auto 18px; animation: spin 0.9s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .center p { color: var(--muted); font-size: 14px; line-height: 1.9; }
+  .center .big { color: var(--cream); font-size: 16px; margin-bottom: 8px; }
+
+  .intro { font-size: 18px; color: var(--textHi); line-height: 1.9; margin-bottom: 28px; font-weight: 400; }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 22px; margin-bottom: 24px;
+  }
+  .label { font-size: 12px; color: var(--gold); letter-spacing: 1px; }
+  .prog-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 14px; }
+  .prog-head .count { font-size: 14px; color: var(--body); }
+  .bar { height: 8px; border-radius: 4px; background: var(--divider); overflow: hidden; margin-bottom: 10px; }
+  .bar > i { display: block; height: 8px; border-radius: 4px; background: var(--gold-bright); transition: width 0.6s ease; }
+  .pct { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .last { font-size: 12px; color: var(--muted); }
+
+  .sec-title { font-size: 13px; color: var(--gold); letter-spacing: 2px; margin-bottom: 8px; }
+  .empty { font-size: 13px; color: var(--muted); padding: 8px 0 4px; }
+
+  .chapter {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 16px 4px; border-bottom: 1px solid var(--border);
+    cursor: pointer; background: none; border-left: 0; border-right: 0; border-top: 0;
+    width: 100%; text-align: left; color: inherit; font-family: inherit;
+  }
+  .chapter:hover { background: rgba(240,184,122,0.04); }
+  .chapter .ico { color: var(--gold-bright); flex-shrink: 0; margin-top: 2px; }
+  .chapter .t { flex: 1; }
+  .chapter .t .ttl { font-size: 14px; color: var(--cream); line-height: 1.5; font-weight: 300; margin-bottom: 3px; }
+  .chapter .t .date { font-size: 11px; color: var(--faint); }
+  .chapter .arrow { color: var(--faint); font-size: 18px; }
+
+  .back {
+    background: none; border: none; color: var(--cream); font-family: inherit;
+    font-size: 15px; cursor: pointer; margin-bottom: 20px; padding: 0;
+  }
+  .read-ttl { font-size: 14px; color: var(--gold-bright); letter-spacing: 1px; line-height: 1.7; margin-bottom: 16px; }
+  .read-body { font-size: 16px; color: var(--cream); line-height: 2.1; font-weight: 300; white-space: pre-wrap; }
+  .read-date { font-size: 11px; color: var(--faint); margin-top: 28px; }
+
+  .footer { margin-top: 48px; text-align: center; }
+  .footer a {
+    display: inline-block; background: var(--gold-bright); color: var(--dark);
+    text-decoration: none; padding: 14px 30px; border-radius: 99px;
+    font-size: 14px; font-weight: 500; letter-spacing: 1px;
+  }
+  .footer p { font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.8; }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <span class="logo">LIFEN</span>
+    <span class="tag">家族の記録</span>
+  </div>
+
+  <!-- 読み込み中 -->
+  <div id="state-loading" class="center">
+    <div class="spinner"></div>
+    <p>記録を読み込んでいます…</p>
+  </div>
+
+  <!-- エラー／無効なリンク -->
+  <div id="state-error" class="center hidden">
+    <p class="big">記録を表示できませんでした</p>
+    <p id="error-msg">このリンクは無効になっているか、有効期限が切れている可能性があります。</p>
+  </div>
+
+  <!-- 一覧 -->
+  <div id="state-content" class="hidden">
+    <p class="intro">ご家族が綴ってきた人生の記録です。</p>
+
+    <div class="card">
+      <div class="prog-head">
+        <span class="label">入力状況</span>
+        <span class="count" id="count">— 問</span>
+      </div>
+      <div class="bar"><i id="bar-fill" style="width:0%"></i></div>
+      <div class="pct" id="pct">達成率 0%</div>
+      <div class="last" id="last">最後の入力：—</div>
+    </div>
+
+    <div class="sec-title" id="chap-title">完成した章（0）</div>
+    <div id="chap-list"></div>
+  </div>
+
+  <!-- 章の閲覧 -->
+  <div id="state-reading" class="hidden">
+    <button class="back" id="back-btn">← 一覧に戻る</button>
+    <div class="read-ttl" id="read-ttl"></div>
+    <div class="read-body" id="read-body"></div>
+    <div class="read-date" id="read-date"></div>
+  </div>
+
+  <div class="footer">
+    <a href="/">Lifen について</a>
+    <p>このページは家族向けの閲覧専用リンクです。<br>ログインは不要です。</p>
+  </div>
+</div>
+
+<script>
+  // ── Supabase（anon キーは公開前提の値。データは RLS / RPC で保護される）──
+  var SUPABASE_URL = 'https://tttattgnzaptuqabjjwh.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR0dGF0dGduemFwdHVxYWJqandoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAzMTE2NDQsImV4cCI6MjA5NTg4NzY0NH0.YzcYChlbp-2K9JCD8jSi1O1Zev4mvY-wIIxy611jewM';
+
+  var el = function (id) { return document.getElementById(id); };
+  function show(stateId) {
+    ['state-loading', 'state-error', 'state-content', 'state-reading'].forEach(function (s) {
+      el(s).classList.toggle('hidden', s !== stateId);
+    });
+    window.scrollTo(0, 0);
+  }
+  function showError(msg) {
+    if (msg) el('error-msg').textContent = msg;
+    show('state-error');
+  }
+
+  // パスから token を取り出す（/family/<token>、末尾スラッシュや ?query も許容）
+  function tokenFromPath() {
+    var path = window.location.pathname.replace(/\/+$/, ''); // 末尾スラッシュ除去
+    var m = path.match(/\/family\/([^\/?#]+)/);
+    return m ? decodeURIComponent(m[1]) : '';
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return '—';
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return iso;
+    var p = function (n) { return String(n).padStart(2, '0'); };
+    return d.getFullYear() + '/' + p(d.getMonth() + 1) + '/' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+
+  var chapters = [];
+
+  function renderList(summary) {
+    var s = summary || {};
+    var answered = s.answered_count || 0;
+    var total = s.total || 200;
+    var pct = total ? Math.round((answered / total) * 100) : 0;
+    el('count').textContent = total + '問中 ' + answered + '問';
+    el('bar-fill').style.width = pct + '%';
+    el('pct').textContent = '達成率 ' + pct + '%';
+    el('last').textContent = '最後の入力：' + fmtDate(s.last_entry_at);
+
+    el('chap-title').textContent = '完成した章（' + chapters.length + '）';
+    var list = el('chap-list');
+    list.innerHTML = '';
+    if (!chapters.length) {
+      var e = document.createElement('p');
+      e.className = 'empty';
+      e.textContent = 'まだ公開された章はありません。';
+      list.appendChild(e);
+    } else {
+      chapters.forEach(function (ch, i) {
+        var btn = document.createElement('button');
+        btn.className = 'chapter';
+        btn.innerHTML =
+          '<span class="ico">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>' +
+          '</span>' +
+          '<span class="t"><span class="ttl"></span><span class="date"></span></span>' +
+          '<span class="arrow">›</span>';
+        btn.querySelector('.ttl').textContent = ch.title || '（無題）';
+        btn.querySelector('.date').textContent = fmtDate(ch.completed_at);
+        btn.addEventListener('click', function () { openChapter(i); });
+        list.appendChild(btn);
+      });
+    }
+    show('state-content');
+  }
+
+  function openChapter(i) {
+    var ch = chapters[i];
+    if (!ch) return;
+    el('read-ttl').textContent = ch.title || '（無題）';
+    el('read-body').textContent = ch.body || '';
+    el('read-date').textContent = '公開日：' + fmtDate(ch.completed_at);
+    show('state-reading');
+  }
+
+  el('back-btn').addEventListener('click', function () { show('state-content'); });
+
+  // ── データ取得：SECURITY DEFINER の RPC を anon キーで呼ぶ（ログイン不要）──
+  function load() {
+    var token = tokenFromPath();
+    if (!token) { showError('リンクが正しくありません。'); return; }
+
+    fetch(SUPABASE_URL + '/rest/v1/rpc/get_shared_family', {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ p_token: token })
+    })
+    .then(function (res) {
+      if (!res.ok) throw new Error('http-' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      if (!data || data.ok !== true) { showError(); return; }
+      chapters = Array.isArray(data.chapters) ? data.chapters : [];
+      renderList(data.summary);
+    })
+    .catch(function () {
+      showError('通信に失敗しました。時間をおいて再度お試しください。');
+    });
+  }
+
+  load();
+</script>
+</body>
+</html>
