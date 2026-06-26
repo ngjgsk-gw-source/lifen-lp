@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/family/(.*)", "destination": "/share.html" }
+    { "source": "/family/(.*)", "destination": "/share.html" },
+    { "source": "/kyukyu-genba-privacy", "destination": "/kyukyu-genba-privacy.html" }
   ]
 }
