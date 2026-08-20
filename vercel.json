@@ -3,6 +3,8 @@
   "rewrites": [
     { "source": "/family/(.*)", "destination": "/share.html" },
     { "source": "/kyukyu-genba-privacy", "destination": "/kyukyu-genba-privacy.html" },
-    { "source": "/kyukyu-genba-terms", "destination": "/kyukyu-genba-terms.html" }
+    { "source": "/kyukyu-genba-terms", "destination": "/kyukyu-genba-terms.html" },
+    { "source": "/kyukyu-genba-privacy-en", "destination": "/kyukyu-genba-privacy-en.html" },
+    { "source": "/kyukyu-genba-terms-en", "destination": "/kyukyu-genba-terms-en.html" }
   ]
 }
